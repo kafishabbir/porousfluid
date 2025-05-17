@@ -49,13 +49,13 @@
 \graphicspath{{figures/}}
 
 
-\newcommand\titleshort{Porous Fluid Manual}
+\newcommand\titleshort{Flow in Porous Media}
 
-\author[1]{Kafi Shabbir}
+\author[1]{Шаббир Кафи Ул}
 
-\affil[1]{Moscow Institute of Physics and Technology}
+\affil[1]{Московский Физико-Технический Институт (национальный исследовательский университет)}
 
-\title{Porous Fluid}
+\title{Сетевая модель двухфазной фильтрации в неоднородных пористых среда}
 \fancyhead{}
 \fancyhead[L]{Manual}
 \fancyhead[C]{\titleshort}
@@ -69,7 +69,7 @@
 \renewcommand{\arraystretch}{1.4}
 
 \begin{abstract}
-	This manual explains how folders are structures. The objective of each files and classes.
+	The network model for simulation in porous media.
 \end{abstract}
 
 \tableofcontents
@@ -86,10 +86,10 @@
 				\item \textbf{reference-papers/} papers read to develop this model
 				\item \textbf{reports/} reports, analysis and other calculation files
 			\end{enumerate}
-		
+
 		\item \textbf{porous-fluid/makefile-gen/} the make file generator program
 			\begin{enumerate}
-				\item \textbf{build/} makefile-gen.exe and other object files 
+				\item \textbf{build/} makefile-gen.exe and other object files
 				\item \textbf{src/} the cource code of the makefile-gen.exe
 				\item \textbf{file-structure.txt} the structure and list of files in porous-fluid/src
 				\item \textbf{Makefile} commands to generate Makefile and put it in the root folder.
@@ -101,11 +101,11 @@
 				\item \textbf{output/}
 					\begin{enumerate}
 						\item \textbf{calculations/} saturation-vs-x.txt
-						\item \textbf{data-raw/} tpressure.txt tmns.txt tvelocity.txt ttime.txt 
+						\item \textbf{data-raw/} tpressure.txt tmns.txt tvelocity.txt ttime.txt
 						\item \textbf{graph/} plots of saturation-vs-x.txt at various moments of time
 						\item \textbf{initial-conditions/} tradius.txt, tlength.txt
 						\item \textbf{pressure/}
-						\item \textbf{velocity/} 
+						\item \textbf{velocity/}
 						\item \textbf{visualization-nothick/} visualization where the thickness of the tube is visible
 						\item \textbf{visualization-thick/}
 					\end{enumerate}
@@ -119,15 +119,16 @@
 	The make file has the following high level commands:
 	\begin{enumerate}
 		\item \textbf{all}: necessary\_compile, run
-		\item \textbf{necessary\_compile}: folder\_check, list\_exe 
-		\item \textbf{folder\_check}: check goodness of porous-fluid/run/ folder 
+		\item \textbf{necessary\_compile}: folder\_check, list\_exe
+		\item \textbf{folder\_check}: check goodness of porous-fluid/run/ folder
 		\item \textbf{run}: run\_exe, back\_up
 		\item \textbf{force}: clean, necessary\_compile
 		\item \textbf{clean}: cleans the build folder
 		\item \textbf{list\_exe}: instructions on how to link
 		\item \textbf{list\_obj}: instructions on how to build the object files
 	\end{enumerate}
-	
+
+	This is a blank citation \cite{wikipedia-gini}
 \bibliographystyle{plain.bst}
 \bibliography{reference}
 \end{document}

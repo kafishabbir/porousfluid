@@ -9,7 +9,7 @@ force: compile run
 	@echo "forced"
 	
 run:
-	./build/makefile-gen.exe
+	./build/makefilegen.exe
 	mv build/Makefile ../
 	
 compile:
@@ -18,7 +18,7 @@ compile:
 	g++ -c -Isrc/ -Wall -std=c++17 src/main.cpp -o build/main.o
 	g++ -c -Isrc/ -Wall -std=c++17 src/print.cpp -o build/print.o
 	g++ -c -Isrc/ -Wall -std=c++17 src/menu.cpp -o build/menu.o
-	g++ build/main.o build/print.o build/menu.o -o build/makefile-gen.exe
+	g++ build/main.o build/print.o build/menu.o -o build/makefilegen.exe
 
 	
 	
