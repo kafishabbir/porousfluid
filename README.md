@@ -25,10 +25,10 @@ Reads config file and regenerate porousfluid/Makefile again without compilation
 
 #### How makefilegen works
 Files and folders of makefilegen:
--porousfluid/makefilegen/src: source code of makefilegen
--porousfluid/makefilegen/build: build, object files of makefilegen
--porousfluid/makefilegen/Makefile: basic code to edit, run, and force compile makefilegen
--porousfluid/makefilegen/makefilegen-config: organization of the libraries in porousfluid/src
+- porousfluid/makefilegen/src: source code of makefilegen
+- porousfluid/makefilegen/build: build, object files of makefilegen
+- porousfluid/makefilegen/Makefile: basic code to edit, run, and force compile makefilegen
+- porousfluid/makefilegen/makefilegen-config: organization of the libraries in porousfluid/src
 
 -The source code is located
 
