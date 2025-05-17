@@ -1,0 +1,133 @@
+\documentclass[
+	12pt
+] {article}
+
+\usepackage[
+	a4paper,
+	left=1.5cm,
+	right=1.5cm,
+	top=2.5cm,
+	bottom=2.5cm,
+	headheight=1cm
+] {geometry} %for setting margin
+
+\usepackage{fancyhdr} %for header and footers
+\usepackage{parskip} %for leaving some space after paragraphs
+
+
+% Math
+\usepackage{mathtools} %helps to number equations
+\usepackage{siunitx} % Units of measurement
+
+
+% For graphs and advanced diagrams
+\usepackage{tikz} %the drawing library
+\usetikzlibrary{positioning} %some auxilary to the drawing library
+\usetikzlibrary{math} %helps to define variables in the tikz
+
+\usepackage{authblk} %authors and their affiliations
+
+% Basic graphics
+\usepackage{float} %to force the figure to be in a place among the text
+\usepackage{graphicx} %for include graphics
+\usepackage{caption} %better referencing to labels
+\usepackage{subcaption}  %helps with multiple pictures in a figure
+
+
+% Language and Font package: COMMENT THESE FOR ENGLISH ONLY
+\usepackage[T2A]{fontenc} %[RUS] loads cyrillic characters
+\usepackage[russian]{babel} %[RUS] changes date heading 'abstract' to Russian
+\usepackage[utf8]{inputenc} %[RUS] to force utf-8 encoding
+\usepackage{hyperref}
+
+
+%-----------------------------------------------------------------------
+
+\renewcommand\thesubfigure{\asbuk{subfigure}} %[RUS] for renaming subfigures to russian
+\sisetup{output-decimal-marker = {,}} %[RUS] changes all ordinary decimal separator to rassiky commas
+\pagestyle{fancy}
+\graphicspath{{figures/}}
+
+
+\newcommand\titleshort{Porous Fluid Manual}
+
+\author[1]{Kafi Shabbir}
+
+\affil[1]{Moscow Institute of Physics and Technology}
+
+\title{Porous Fluid}
+\fancyhead{}
+\fancyhead[L]{Manual}
+\fancyhead[C]{\titleshort}
+\fancyhead[R]{\the\year}
+
+
+\sloppy
+\begin{document}
+
+\maketitle
+\renewcommand{\arraystretch}{1.4}
+
+\begin{abstract}
+	This manual explains how folders are structures. The objective of each files and classes.
+\end{abstract}
+
+\tableofcontents
+
+\section{Code documentation}
+\subsection{File and Folder Structure}
+
+	\begin{enumerate}
+		\item \textbf{porous-fluid/docs/} documents, instructions and other files related to the model.
+			\begin{enumerate}
+				\item \textbf{instructions/} cmd commands
+				\item \textbf{manual/} the documentation of code
+				\item \textbf{publications/} list of papers and conference papers published on this model
+				\item \textbf{reference-papers/} papers read to develop this model
+				\item \textbf{reports/} reports, analysis and other calculation files
+			\end{enumerate}
+		
+		\item \textbf{porous-fluid/makefile-gen/} the make file generator program
+			\begin{enumerate}
+				\item \textbf{build/} makefile-gen.exe and other object files 
+				\item \textbf{src/} the cource code of the makefile-gen.exe
+				\item \textbf{file-structure.txt} the structure and list of files in porous-fluid/src
+				\item \textbf{Makefile} commands to generate Makefile and put it in the root folder.
+			\end{enumerate}
+		\item \textbf{porous-fluid/run} this normally does not exist but when the code is run for the first time it is created automatically
+			\begin{enumerate}
+				\item \textbf{build/} all the object files
+				\item \textbf{input/} incongen.txt, parameter.txt, tlength.txt, tmns.txt, tradius.txt
+				\item \textbf{output/}
+					\begin{enumerate}
+						\item \textbf{calculations/} saturation-vs-x.txt
+						\item \textbf{data-raw/} tpressure.txt tmns.txt tvelocity.txt ttime.txt 
+						\item \textbf{graph/} plots of saturation-vs-x.txt at various moments of time
+						\item \textbf{initial-conditions/} tradius.txt, tlength.txt
+						\item \textbf{pressure/}
+						\item \textbf{velocity/} 
+						\item \textbf{visualization-nothick/} visualization where the thickness of the tube is visible
+						\item \textbf{visualization-thick/}
+					\end{enumerate}
+				\item \textbf{incongen.exe}
+				\item \textbf{test.exe}
+				\item \textbf{simulate.exe}
+			\end{enumerate}
+	\end{enumerate}
+
+\subsection{Makefile}
+	The make file has the following high level commands:
+	\begin{enumerate}
+		\item \textbf{all}: necessary\_compile, run
+		\item \textbf{necessary\_compile}: folder\_check, list\_exe 
+		\item \textbf{folder\_check}: check goodness of porous-fluid/run/ folder 
+		\item \textbf{run}: run\_exe, back\_up
+		\item \textbf{force}: clean, necessary\_compile
+		\item \textbf{clean}: cleans the build folder
+		\item \textbf{list\_exe}: instructions on how to link
+		\item \textbf{list\_obj}: instructions on how to build the object files
+	\end{enumerate}
+	
+\bibliographystyle{plain.bst}
+\bibliography{reference}
+\end{document}

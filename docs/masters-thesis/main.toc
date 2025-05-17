@@ -1,0 +1,4 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Code documentation}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}File and Folder Structure}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Makefile}{2}{subsection.1.2}%
