@@ -1,5 +1,5 @@
 all: run
-	@echo "Makefile2 generated for porous-fluid"
+	@echo "Makefile generated for porousfluid"
 
 edit:
 	geany -i src/main.cpp src/decl.h src/print.h src/print.cpp  src/menu.h src/menu.cpp

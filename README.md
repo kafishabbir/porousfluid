@@ -1,36 +1,46 @@
-# Instructions
-## Compile instructions
-### makefilegen
-makefilegen short form for makefile-generator
-
-This is a completely separate program that creates a Makefile for the main code.
-
+# Development instructions
+## makefilegen
+- makefilegen short form for makefile-generator
+To work with makefilegen, you must go into the folder:
+### relocate to porousfluid/makefilegen
 ##
 	cd makefilegen
 
-#### edit makefilegen
-To open the source code of makefilegen
-##
-	make edit
-
-#### read new file structure of porous fluid without compiltaion
-Reads config file and regenerate porousfluid/Makefile again without compilation
+### Regenerate porousfluid/Makefile without recompilation
 ##
 	make
 
-#### Force compile and run
+- Runs makefilegen/build/makefilegen.exe
+- Which reads makefilegen-config.txt
+- This produces makefilegen/build/Makefile, it is put in build folder so that it does not replace makefilegen/Makefile
+- Moves porousfluid/makefilegen/build Makefile -> porousfluid/Makefile
+
+### edit makefilegen
+
+##
+	make edit
+To open the source code of makefilegen.exe
+
+
+### Force compile and run
 ##
 	make force
 
+- deletes makefilegen/build, which forces to rebuild all object files
 
-#### How makefilegen works
-Files and folders of makefilegen:
-- porousfluid/makefilegen/src: source code of makefilegen
-- porousfluid/makefilegen/build: build, object files of makefilegen
-- porousfluid/makefilegen/Makefile: basic code to edit, run, and force compile makefilegen
-- porousfluid/makefilegen/makefilegen-config: organization of the libraries in porousfluid/src
+### Files and folders of porousfluid/makefilegen/:
+- __src__: source code of makefilegen
+- __build__: exe and object files of makefilegen
+- __Makefile__: basic scripts to edit, run, and force compile makefilegen.exe
+- __makefilegen-config.txt__: configuration input file about the organization of the libraries in porousfluid/src
 
--The source code is located
+### Working Mechanism
+- object files are produced into makefilegen/build
+- object files are linked and build/makefilegen.exe is produced
+- start running ./build/makefilegen.exe
+- reads makefilegen-config.txt
+- outputs file, build/Makefile
+- moves build/Makefile to porousfluid/Makefile, replacing the existing Makefile
 
 
 
