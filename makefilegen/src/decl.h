@@ -16,7 +16,7 @@ namespace decl
 
 	const std::string compile_command_object = "g++ -c -Wall -std=c++17 -Isrc/ ";
 	const std::string compile_command_exe = "g++ ";
-	const std::string input_file_name = "makefile-gen-config.txt";
+	const std::string input_file_name = "makefilegen-config.txt";
 
 	const std::vector<std::string> folder_exist_check
 	{
@@ -31,8 +31,8 @@ namespace decl
 		path_run_folder + "output/plots/pressure",
 		path_run_folder + "output/plots/velocity",
 		path_run_folder + "output/plots/fluids-nothick",
-		path_run_folder + "output/plots/fluids-thick"
-		path_run_folder + "output/plots/saturation"
+		path_run_folder + "output/plots/fluids-thick",
+		path_run_folder + "output/plots/saturation",
 	};
 }
 
