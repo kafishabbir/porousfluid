@@ -1,3 +1,2 @@
-run/
-docs/kondaurov/venv
-docs/kondaurov/videos
+*.bmp
+build/

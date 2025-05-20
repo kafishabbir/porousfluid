@@ -8,7 +8,7 @@ namespace decl
 	const std::string target_output = "build/Makefile";
 	const std::string path_src_folder = "src/";
 	const std::string path_run_folder = "run/";
-	const std::string path_build_folder = path_run_folder + "build/";
+	const std::string path_build_folder = "build/";
 
 	const std::string terminal_mkdir = "mkdir -p " ;
 	const std::string terminal_rmrf = "rm -rf ";
@@ -20,19 +20,19 @@ namespace decl
 
 	const std::vector<std::string> folder_exist_check
 	{
+		path_build_folder,
 		path_run_folder,
-		path_run_folder + "build",
 		path_run_folder + "input",
 		path_run_folder + "output",
-		path_run_folder + "results-old",
-		path_run_folder + "output/calculations",
-		path_run_folder + "output/data-raw",
-		path_run_folder + "output/graph",
-		path_run_folder + "output/initial-conditions",
-		path_run_folder + "output/pressure",
-		path_run_folder + "output/velocity",
-		path_run_folder + "output/visualization-nothick",
-		path_run_folder + "output/visualization-thick"
+		path_run_folder + "output-old",
+		path_run_folder + "output/simulation-data",
+		path_run_folder + "output/simulation-calculations",
+		path_run_folder + "output/plots",
+		path_run_folder + "output/plots/pressure",
+		path_run_folder + "output/plots/velocity",
+		path_run_folder + "output/plots/fluids-nothick",
+		path_run_folder + "output/plots/fluids-thick"
+		path_run_folder + "output/plots/saturation"
 	};
 }
 

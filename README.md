@@ -1,19 +1,24 @@
 # Development instructions
 ## makefilegen
-- makefilegen short form for makefile-generator
-To work with makefilegen, you must go into the folder:
+- __makefilegen__ is the __makefile-generator__
+- The Makefile opens the editor with all source-code, and helps compile them.
+
 ### relocate to porousfluid/makefilegen
 ##
 	cd makefilegen
+
+- To work with makefilegen, you must go into the folder:
 
 ### Regenerate porousfluid/Makefile without recompilation
 ##
 	make
 
-- Runs makefilegen/build/makefilegen.exe
-- Which reads makefilegen-config.txt
-- This produces makefilegen/build/Makefile, it is put in build folder so that it does not replace makefilegen/Makefile
-- Moves porousfluid/makefilegen/build Makefile -> porousfluid/Makefile
+- object files are produced into makefilegen/build
+- object files are linked and build/makefilegen.exe is produced
+- starts running ./build/makefilegen.exe
+- reads makefilegen-config.txt
+- outputs file, build/Makefile, it is put in build folder so that it does not replace makefilegen/Makefile
+- moves build/Makefile to porousfluid/Makefile, replacing the existing Makefile
 
 ### edit makefilegen
 
@@ -26,7 +31,7 @@ To open the source code of makefilegen.exe
 ##
 	make force
 
-- deletes makefilegen/build, which forces to rebuild all object files
+- deletes makefilegen/build/, which forces to rebuild all object files
 
 ### Files and folders of porousfluid/makefilegen/:
 - __src__: source code of makefilegen
@@ -34,13 +39,45 @@ To open the source code of makefilegen.exe
 - __Makefile__: basic scripts to edit, run, and force compile makefilegen.exe
 - __makefilegen-config.txt__: configuration input file about the organization of the libraries in porousfluid/src
 
-### Working Mechanism
-- object files are produced into makefilegen/build
-- object files are linked and build/makefilegen.exe is produced
-- start running ./build/makefilegen.exe
-- reads makefilegen-config.txt
-- outputs file, build/Makefile
-- moves build/Makefile to porousfluid/Makefile, replacing the existing Makefile
+
+
+
+
+
+
+
+
+
+
+
+# File and folder organization
+## build/
+Object files of all ".cpp" source code
+
+## docs/
+Documents, articles, publications related to this application.
+
+## makefilegen/
+Additional program that takes in the order and structure of files in porousfluid/src/ and regenerates porousfluid/Makefile
+
+## run/
+### *.exe
+#### simulate.exe
+Execuable to begin the simulation
+
+#### incongen.exe
+Generates the initial distributions
+
+### input
+
+### output
+
+### output-old
+Contains files from previous simulations
+
+## src/
+
+
 
 
 

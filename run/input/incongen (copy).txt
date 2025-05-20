@@ -1,0 +1,5 @@
+nrows=40
+ncols=40
+tradius=function
+tlength=inverseradius
+tmns=saturate_oil

@@ -2,24 +2,24 @@
 #include "decl.h"
 
 /*!
- * How the program makefile-gen.exe works,
- * when we run make in the root folder of makefile-gen/
- * 		porous-fluid/makefile-gen$ make
- * 		1. compilation and generation of makefile-gen.exe, 
- * 			porous-fluid/makefile-gen/build/makefile-gen.exe
+ * How the program makefilegen.exe works,
+ * when we run make in the root folder of makefilegen/
+ * 		porousfluid/makefilegen$ make
+ * 		1. compilation and generation of makefilegen.exe,
+ * 			porousfluid/makefilegen/build/makefilegen.exe
  * 		2. execution of the exe which produces build/Makefile
- *			porous-fluid/makefile-gen$ ./build/makefile-gen.exe
+ *			porousfluid/makefilegen$ ./build/makefilegen.exe
  * 		3. moves build/Makefile to the root folder
  */
 
 int main()
 {
 	// read porous-fluid/makefile-gen/file-structure.txt
-	const std::vector<std::string> file_vec = Menu::read_file_structure(); 
+	const std::vector<std::string> file_vec = Menu::read_file_structure();
 
 	// the output will be written to porous-fluid/makefile-gen/build/
 	std::ofstream fout(decl::target_output);
-	
+
 	const std::string time_stamp_format = "\"%Y%m%d_%H%M%S\"";
 	fout << "TIMESTAMP := $(shell date +" + time_stamp_format + ")";
 	/*
@@ -32,13 +32,13 @@ int main()
 	 * clean up the plot folder
 	 */
 	Menu::necessary_compile(fout, file_vec);
-	
-	
+
+
 	Menu::folder_check(fout);
-	
-	
+
+
 	Menu::run(fout);
-	
+
 	/*
 	 * force: clean_build, necessary_compile
 	 */
